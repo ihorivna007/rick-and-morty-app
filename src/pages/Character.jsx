@@ -1,7 +1,6 @@
 import { React } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/main.scss';
-import { charactersFromServer } from './Home';
 
 const titleFormating = (str) => {
   return str.slice(0, 1).toUpperCase() + str.slice(1);
