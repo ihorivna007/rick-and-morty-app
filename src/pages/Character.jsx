@@ -19,7 +19,7 @@ export const Character = () => {
         <span className='link__icon'></span>
         <h3 className="link__go-back">Go back</h3>
       </Link>
-      {console.log(currentCharacter)}
+
       <div className="character">
         <div
           className="character__image"
@@ -31,6 +31,7 @@ export const Character = () => {
 
         <div className="character__table table">
           <h6 className="table__info">Informations</h6>
+
           {titles.map(title => (
             <div className="table__row" key={title}> 
               <div className="table__row-title">
@@ -40,6 +41,7 @@ export const Character = () => {
                   : titleFormating(title).slice(0, -1)
               )}
               </div>
+
               <div className="table__row-data">
                 {(
                     title !== 'origin' 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Routes,
   Route,
 } from 'react-router-dom';
@@ -12,15 +12,13 @@ import { Character } from "./pages/Character";
 export class App extends React.Component {
   render() {
     return (
-      <>
-        <Router>
-          <Routes>
-            <Route exact path='/' element={<Home />} />
-            <Route path='character/:id' element={<Character />} />
-            <Route path='*' element={<ErrorPage />} />
-          </Routes>
-        </Router>
-      </>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route path='character/:id' element={<Character />} />
+          <Route path='*' element={<ErrorPage />} />
+        </Routes>
+      </BrowserRouter>
     );
   }
 }

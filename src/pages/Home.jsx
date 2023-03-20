@@ -43,7 +43,7 @@ export class Home extends React.Component {
 
   render() {
     const {characters} = this.state;
-    console.log(characters)
+    // console.log(characters)
     return (
       <div className='home page'>
         <div className='home__header header'>
