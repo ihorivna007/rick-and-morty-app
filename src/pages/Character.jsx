@@ -2,7 +2,7 @@ import { React } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/main.scss';
 
-const titleFormating = (str) => {
+const dataFormating = (str) => {
   return str.slice(0, 1).toUpperCase() + str.slice(1);
 }
 
@@ -35,20 +35,19 @@ export const Character = () => {
           {titles.map(title => (
             <div className="table__row" key={title}> 
               <div className="table__row-title">
-              {(
+              {dataFormating(
                 title !== 'species' 
-                  ? titleFormating(title)
-                  : titleFormating(title).slice(0, -1)
+                  ? title
+                  : title.slice(0, -1)
               )}
               </div>
 
               <div className="table__row-data">
-                {(
-                    title !== 'origin' 
-                      ? currentCharacter[`${title}`] 
-                      : currentCharacter[`${title}`].name
-                  ) || 'unknown'
-                }
+                {dataFormating(
+                  title !== 'origin' 
+                    ? currentCharacter[`${title}`] 
+                    : currentCharacter[`${title}`].name
+                ) || 'unknown'}
               </div>
             </div>
           ))}
